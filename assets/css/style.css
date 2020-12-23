@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+.login .form-group {
+    position: relative;
+    margin-bottom: 1.5rem
+}
+
+.login .form-control-placeholder {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    padding: 7px 0 0 13px;
+    transition: all 200ms;
+    opacity: 0.5;
+    color: grey
+}
+
+.login .form-control:focus+.form-control-placeholder,
+.login .form-control:valid+.form-control-placeholder {
+    font-size: 90%;
+    transform: translate3d(0, -100%, 0);
+    opacity: 1;
+    background-color: white;
+    color: #d66292;
+}
+
+.login .form-control {
+    background: transparent;
+    border: none;
+    border: 1px solid #a6a6a6;
+    box-shadow: none!important;
+    border-radius: 0px!important;
+    /* padding: 1.5em .75rem; */
+    min-height: 50px;
+    color: black;
+    font-size: 1rem;
+}
+
+input.form-control:focus,
+input.form-control:after {
+    outline-width: 0;
+    border: 1px solid rgb(34, 34, 34);
+    background: transparent
+}
+.btn{
+    outline: none!important;
+    box-shadow: none!important;
+    min-width: 80px;
+}
+section.login {
+    min-height: 100vh;
+}
+
+section.login .d-flex.flex-row>div {
+    width: 50%;
+}
+.login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+.login .bg {
+    background: url('../../assets/img/admin/brushes.jpg')no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.login-btn,.theme-btn{
+    background: #D66292;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+    border-radius: 0;
+    padding: 10px;
+    text-transform: uppercase;
+}
+.login-btn:hover, .theme-btn:hover{
+    color: white;
+}
+
+.login-btn{
+    margin: 1.6em 0em;
+}
+.login .logo{
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.login form {
+    min-width: 350px;
+    max-width: 70%;
+    margin: 0 auto;
+}
+input[type="password"]{
+    padding-right: 40px
+}
+p#forgot_pswd {
+    text-align: right;
+    position: relative;
+       
+}
+p#forgot_pswd a{
+    color: #D66292;
+    font-size: 16px; 
+    text-decoration: none;
+    font-weight: 600;
+}
+.mb_1{
+    margin-bottom: 10px!important;
+}
+
+p.sign-Up {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+p.sign-Up a {
+    color: #d66292;
+    text-decoration: underline;
+}
+
+span.field-icon {
+    position: absolute;
+    right: 14px;
+    bottom: 18px;
+    background: white;
+    cursor: pointer;
+}
+.pswdModal h5.modal-title,
+.SignUp-Modal h5.modal-title{
+    font-size: 22px;
+    font-weight: 600;
+}
+.pswdModal .modal-header, 
+.pswdModal .modal-footer,
+.SignUp-Modal .modal-header, 
+.SignUp-Modal .modal-footer{
+    border: 0px
+}
+
+.pswdModal button.close, 
+.SignUp-Modal button.close{
+    position: absolute;
+    top: 25px;
+    right: 28px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    line-height: 0;
+    height: 35px;
+    width: 35px;
+    font-size: 1.8em;
+    font-weight: 500;
+    padding: 8px 8px 11px 8px!important;
+    box-shadow: none!important;
+    outline: none!important;
+}
+
+.myFlx{
+    justify-content: space-between;
+}
+.myFlx>div {
+    flex: 0 0 48%;
+}
+
+.signUp form {
+    min-width: 350px;
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+img.admin_logo {
+    max-height: 75px;
+}
+
+.f-right{
+    float: right;
+}
