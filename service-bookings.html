@@ -32,8 +32,8 @@
           <li><a href="sub-category.html">Sub Category</a></li>
           <li><a href="discounts.html">Discounts</a></li>
           <li><a href="promocode.html">Promo Code</a></li>
-          <li><a href="slots.html">Slots</a></li>
-          <li><a href="service-for-today.html">Services for today</a></li>
+          <li ><a href="slots.html">Slots</a></li>
+          <li ><a href="service-for-today.html">Services for today</a></li>
           <li class="sidebar--active"><a href="service-bookings.html">Service Bookings</a></li>
           <li><a href="ratings.html">Ratings</a></li>
 
@@ -72,11 +72,141 @@
       </div>
     
       <div class="main__content">
-        <br><br>
-        <div class="container">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam dignissimos suscipit minus? Minus totam est in ab labore consectetur ullam. Quam facere dolores aliquam dolorum recusandae doloremque sequi porro deserunt eligendi obcaecati incidunt dolor reiciendis maxime reprehenderit, officiis, distinctio, aperiam a? Minus, assumenda. Odio, repudiandae repellendus. Facilis natus debitis aut atque fugiat alias quibusdam ex tempore aliquid temporibus, eum saepe. Dolores fugit quis officiis pariatur eius explicabo eveniet aut dolorum.</p>
-    </div>
-  </div>
+        <!-- <div class="w-50">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control _search" id="searchTd" placeholder="Search">
+            <div class="input-group-append">
+              <button class="btn theme-btn" type="submit">Go</button>
+            </div>
+          </div>
+        </div>-->
+        <div class="rightBtn">
+          <select name="service" class="form-control mySelect" autocomplete="off">
+            <!-- <option hidden disabled selected value> -- Select Service -- </option> -->
+            <option value="monthly">Monthly</option>
+            <option value="weekly">Weekly</option>
+            <option value="annually">Annually</option>
+          </select>
+        </div> 
+<br><br><br>
+<div class="clearfix"></div>
+        <div class="pad_3">  
+          <div class="table-responsive">
+
+            <table class="table themeTable" >
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Service</th>
+                  <th>Date</th>
+                  <th>Time Slot</th>
+                  <th>Location</th>
+                </tr>
+              </thead>
+              <tbody id="saloonTable"> 
+                <tr>
+                  <td>01</td>     
+                  <td>Hair Cut</td>              
+                  <td>28-11-2020</td>
+                  <td>04: 00 AM</td>
+                  <td>Madhapur</td>
+                </tr>
+                <tr>
+                  <td>02</td>   
+                  <td>Shaving</td>                
+                  <td>28-11-2020</td>
+                  <td>11: 00 AM</td>
+                  <td>Kondapur</td>
+                </tr>
+                <tr>
+                  <td>03</td>  
+                  <td>Hair Spa</td>                 
+                  <td>28-11-2020</td>
+                  <td>01: 00 PM</td>
+                  <td>Madhapur</td>
+                </tr>
+                <tr>
+                  <td>04</td> 
+                  <td>Head Massage</td>                  
+                  <td>28-11-2020</td>
+                  <td>11: 00 AM</td>
+                  <td>Kondapur</td>
+                </tr>
+                <tr>
+                  <td>05</td>   
+                  <td>Body Spa</td>                
+                  <td>28-11-2020</td>
+                  <td>04: 00 AM</td>
+                  <td>Madhapur</td>
+                </tr>
+                <tr>
+                  <td>06</td>   
+                  <td>Hair Cut</td>                
+                  <td>28-11-2020</td>
+                  <td>11: 00 AM</td>
+                  <td>Kondapur</td>
+                </tr>
+                <tr>
+                  <td>07</td>  
+                  <td>Hair Spa</td>                 
+                  <td>28-11-2020</td>
+                  <td>01: 00 PM</td>
+                  <td>Madhapur</td>
+                </tr>
+                <tr>
+                  <td>08</td>   
+                  <td>Shaving</td>                
+                  <td>28-11-2020</td>
+                  <td>11: 00 AM</td>
+                  <td>Kondapur</td>
+                </tr>
+                <tr>
+                  <td>09</td>   
+                  <td>Hair Cut</td>                
+                  <td>28-11-2020</td>
+                  <td>11: 00 AM</td>
+                  <td>Kondapur</td>
+                </tr>
+                <tr>
+                  <td>10</td>   
+                  <td>Body Spa</td>                
+                  <td>28-11-2020</td>
+                  <td>04: 00 AM</td>
+                  <td>Madhapur</td>
+                </tr>
+                <tr>
+                  <td>11</td> 
+                  <td>Head Massage</td>                  
+                  <td>28-11-2020</td>
+                  <td>11: 00 AM</td>
+                  <td>Kondapur</td>
+                </tr>
+               
+                <tr>
+                  <td>12</td>     
+                  <td>Hair Cut</td>              
+                  <td>28-11-2020</td>
+                  <td>04: 00 AM</td>
+                  <td>Madhapur</td>
+                </tr>
+
+              </tbody>
+            </table>
+
+          </div>
+          <div class="clearfix"></div>
+
+          <!-- pagination  -->
+            <div class='pagination-container tablePaging'>              
+                  <div class="pagination">
+                    <ol id="numbers"></ol>
+                  </div>                
+            </div>
+
+
+        </div>
+        
+      </div>
   </main>
   <!--  //END main -->
     
@@ -85,11 +215,13 @@
   
     
 </div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js'></script>
-<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js'></script> -->
-<script  src="./assets/js/script.js"></script>
+
+ 
+ <!-- partial -->
+ <script src='./assets/js/jquery-3.3.1.min.js'></script>
+ <script src="./assets/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+ <script src="./assets/js/main.js"></script>
+
 
 </body>
 </html>

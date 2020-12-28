@@ -1,198 +1,61 @@
-
-// Page Loading
-var preloader = document.getElementById('loading');
-function myFunction(){
-    preloader.style.display = 'none';
-};
-// End Page Loading
-
-
-
-// Bootstrap Scrollpy
-
-//++++++++++ adding active class to menu ++++++++++
-$(document).on("click","a[name='link']", function (e) {
-    $(".navbar-nav").find(".active").removeClass("active");
-     $(this).addClass("active");
+// image upload 
+$('#file-upload').change(function() {
+  var i = $(this).prev('label').clone();
+  var file = $('#file-upload')[0].files[0].name;
+  $(this).prev('label').text(file);
 });
 
-//++++++++++++++ Bootstrap Scrollpy ++++++++++++++++++++++++
-$("#nav ul li a[href^='#']").on('click', function(e) {
-    // prevent default anchor click behavior
-    e.preventDefault();
-    // store hash
-    var hash = this.hash;
-    // animate
-    $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 1000, function(){
-        // when done, add hash to url
-        // (default click behaviour)
-        window.location.hash = hash;
-      }); 
- });
 
 
+// table pagination and search 
 
-//++++++++++++++ Count of a Textarea ++++++++++++++//
-$('textarea').keyup(function() {
-    
-  var characterCount = $(this).val().length,
-      current = $('#current'),
-      maximum = $('#maximum'),
-      theCount = $('#the-count');
-    
-  current.text(characterCount);
- 
-  
-  /*This isn't entirely necessary, just playin around*/
-  if (characterCount < 70) {
-    current.css('color', '#666');
-  }
-  if (characterCount > 70 && characterCount < 90) {
-    current.css('color', '#6d5555');
-  }
-  if (characterCount > 90 && characterCount < 100) {
-    current.css('color', '#793535');
-  }
-  if (characterCount > 100 && characterCount < 120) {
-    current.css('color', '#841c1c');
-  }
-  if (characterCount > 120 && characterCount < 139) {
-    current.css('color', '#8f0001');
-  }
-  
-  if (characterCount >= 400) {
-    maximum.css('color', '#8f0001');
-    current.css('color', '#8f0001');
-    //theCount.css('font-weight','bold');
-  } else {
-    maximum.css('color','#666');
-    //theCount.css('font-weight','normal');
-  }
-  
-      
-});
-//++++++++++++++ End ++++++++++++++//
-
-
-//++++++++++++++ Scroll Back To Top Button ++++++++++++++//
-var mybutton = document.getElementById("goTop");
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
-  if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-
-
-  if($(this).scrollTop()>200) {
-    $(".smire_hdr_top" ).addClass("hide_top");
-    } else {
-        $(".smire_hdr_top" ).removeClass("hide_top");
-    }    
- if($(this).scrollTop()>200) {
-      $(".fixed-top" ).addClass("mve_top");
-    } else {
-      $(".fixed-top" ).removeClass("mve_top");
-  }   
-   
-
-};
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-//++++++++++++++ End ++++++++++++++//
-
-
-//++++++++++++++ Bootstrap Navbar collapse ++++++++++++++++++++++++//
-$(function(){ 
-  var navMain = $(".navbar-collapse");
-  navMain.on("click", "a", null, function () {
-    navMain.collapse('hide');
-  });
-});
-//++++++++++++++ End ++++++++++++++//
-
-function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-
-
-
-// faqs
-
-const items = document.querySelectorAll(".accordion button");
-
-function toggleAccordion() {
-  const itemToggle = this.getAttribute('aria-expanded');
-  
-  for (i = 0; i < items.length; i++) {
-    items[i].setAttribute('aria-expanded', 'false');
-  }
-  
-  if (itemToggle == 'false') {
-    this.setAttribute('aria-expanded', 'true');
-  }
-}
-
-items.forEach(item => item.addEventListener('click', toggleAccordion));
-
-
-
-/// testimo slider
 $(document).ready(function(){
-  $("#testimonial-slider").owlCarousel({
-      items:3,
-      itemsDesktop:[1000,3],
-      itemsDesktopSmall:[979,3],
-      itemsTablet:[768,1],
-      pagination:true,
-      autoPlay: false,
-      autoplayHoverPause: true
-  });
-});
-
-// blog slider
-$(document).ready(function() { 
-  $("#owl-example").owlCarousel({
-      items:3,
-      itemsDesktop:[1000,3],
-      itemsDesktopSmall:[979,3],
-      itemsTablet:[768,1],
-      // itemsDesktop : [1499,3],
-      // itemsDesktopSmall : [1199,3],
-      // itemsTablet : [899,2],
-      itemsMobile : [599,1],
-      navigation : true,
-      pagination: false,
-      autoPlay: true,
-      autoplayHoverPause: true, 
-      navigationText : ['<span class="a_rrws"><img src="././assets/img/arrow-1.svg" /></span>','<span class="a_rrws"><img src="././assets/img/arrow-2.svg" /></span>'],
-
-      // navigationText : ['<span class="fa-stack"><i class="fa fa-circle fa-stack-1x"></i><i class="fa fa-chevron-circle-left fa-stack-1x fa-inverse"></i></span>','<span class="fa-stack"><i class="fa fa-circle fa-stack-1x"></i><i class="fa fa-chevron-circle-right fa-stack-1x fa-inverse"></i></span>'],
+  $(function() {
+    const rowsPerPage = 6;
+    const rows = $('.themeTable tbody tr');
+    const rowsCount = rows.length;
+    const pageCount = Math.ceil(rowsCount / rowsPerPage); // avoid decimals
+    const numbers = $('#numbers');
+    
+    // Generate the pagination.
+    for (var i = 0; i < pageCount; i++) {
+      numbers.append('<li><a href="#">' + (i+1) + '</a></li>');
+    }
+      
+    // Mark the first page link as active.
+    $('#numbers li:first-child a').addClass('active');
+  
+    // Display the first set of rows.
+    displayRows(1);
+    
+    // On pagination click.
+    $('#numbers li a').click(function(e) {
+      var $this = $(this);
+      
+      e.preventDefault();
+      
+      // Remove the active class from the links.
+      $('#numbers li a').removeClass('active');
+      
+      // Add the active class to the current link.
+      $this.addClass('active');
+      
+      // Show the rows corresponding to the clicked page ID.
+      displayRows($this.text());
+    });
+    
+    // Function that displays rows for a specific page.
+    function displayRows(index) {
+      var start = (index - 1) * rowsPerPage;
+      var end = start + rowsPerPage;
+      
+      // Hide all rows.
+      rows.hide();
+      
+      // Show the proper rows for this page.
+      rows.slice(start, end).show();
+    }
   });
   
+        
 });
-
-
-$('.is-floating-label input, .is-floating-label textarea').on('focus blur', function (e) {
-  $(this).parents('.is-floating-label').toggleClass('is-focused', (e.type === 'focus' || this.value.length > 0));
-}).trigger('blur');

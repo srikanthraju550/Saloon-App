@@ -1,95 +1,350 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Salonee | Dashboard</title>
- <!-- fonts  -->
- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="./assets/bootstrap-4.3.1/css/bootstrap.min.css">
- <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
- <link rel="stylesheet" href="./assets/css/theme.css">
- <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- fonts  -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/bootstrap-4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./assets/css/theme.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<div class="layout">
-  <div class="layout__container">
-    <!-- <div class="layout__container-before"></div> -->
+  <!-- partial:index.partial.html -->
+  <div class="layout">
+    <div class="layout__container">
+      <!-- <div class="layout__container-before"></div> -->
 
-    <!-- BEGIN sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar__header">
-        <a href="dashboard.html">
+      <!-- BEGIN sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__header">
+          <a href="dashboard.html">
             <img src="./assets/img/admin/logo.png" alt="logo" class="admin_logo">
-        </a>
-      </div>
-      <div class="sidebar__content">
-        <ul class="sidebar__content-menu">
-          
-          <li><a href="dashboard.html">Location</a></li>
-          <li ><a href="category.html">Category</a></li>
-          <li><a href="sub-category.html">Sub Category</a></li>
-          <li class="sidebar--active"><a href="discounts.html">Discounts</a></li>
-          <li><a href="promocode.html">Promo Code</a></li>
-          <li><a href="slots.html">Slots</a></li>
-          <li><a href="service-for-today.html">Services for today</a></li>
-          <li><a href="service-bookings.html">Service Bookings</a></li>
-          <li><a href="ratings.html">Ratings</a></li>
-
-        </ul>
-      </div>
-    </aside>
-    <!--  //END sidebar -->
-    
-    <!-- BEGIN main -->
-    <main class="main">
-
-      <div class="main__header">
-        <div class="main__header-heading">
-          <h1>Service Provider</h1>
+          </a>
         </div>
-        
-        <div class="main__header-user">
-          <button type="button" class="main__header-user-toggle" data-toggle="dropdown" data-toggle-for="user-menu" role="button">
-            <span class="main__header-user-toggle-picture">
-              <img src="./assets/img/admin/male-user-shadow.png" alt="">
-            </span>
-          </button>
-          <div class="main__header-user-menu" id="user-menu">
-            <div class="main__header-user-menu-header">
-              <span>Username</span>
+        <div class="sidebar__content">
+          <ul class="sidebar__content-menu">
+
+            <li><a href="dashboard.html">Location</a></li>
+            <li><a href="category.html">Category</a></li>
+            <li><a href="sub-category.html">Sub Category</a></li>
+            <li class="sidebar--active"><a href="discounts.html">Discounts</a></li>
+            <li><a href="promocode.html">Promo Code</a></li>
+            <li><a href="slots.html">Slots</a></li>
+            <li><a href="service-for-today.html">Services for today</a></li>
+            <li><a href="service-bookings.html">Service Bookings</a></li>
+            <li><a href="ratings.html">Ratings</a></li>
+
+          </ul>
+        </div>
+      </aside>
+      <!--  //END sidebar -->
+
+      <!-- BEGIN main -->
+      <main class="main">
+
+        <div class="main__header">
+          <div class="main__header-heading">
+            <h1>Service Provider</h1>
+          </div>
+
+          <div class="main__header-user">
+            <button type="button" class="main__header-user-toggle" data-toggle="dropdown" data-toggle-for="user-menu"
+              role="button">
+              <span class="main__header-user-toggle-picture">
+                <img src="./assets/img/admin/male-user-shadow.png" alt="">
+              </span>
+            </button>
+            <div class="main__header-user-menu" id="user-menu">
+              <div class="main__header-user-menu-header">
+                <span>Username</span>
+              </div>
+              <ul class="main__header-user-menu-content">
+                <li><a href="#"><i class="icon icon--dashboard"></i>Dashboard</a></li>
+                <li><a href="#"><i class="icon icon--profile"></i>My profile</a></li>
+                <li><a href="#"><i class="icon icon--settings"></i>Settings</a></li>
+                <li><a href="#"><i class="icon icon--help"></i>Help center</a></li>
+                <li><a href="#"><i class="icon icon--sign-out"></i>Sign out</a></li>
+              </ul>
             </div>
-            <ul class="main__header-user-menu-content">
-              <li><a href="#"><i class="icon icon--dashboard"></i>Dashboard</a></li>
-              <li><a href="#"><i class="icon icon--profile"></i>My profile</a></li>
-              <li><a href="#"><i class="icon icon--settings"></i>Settings</a></li>
-              <li><a href="#"><i class="icon icon--help"></i>Help center</a></li>
-              <li><a href="#"><i class="icon icon--sign-out"></i>Sign out</a></li>
-            </ul>
           </div>
         </div>
-      </div>
-    
-      <div class="main__content">
-        <br><br>
-        <div class="container">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam dignissimos suscipit minus? Minus totam est in ab labore consectetur ullam. Quam facere dolores aliquam dolorum recusandae doloremque sequi porro deserunt eligendi obcaecati incidunt dolor reiciendis maxime reprehenderit, officiis, distinctio, aperiam a? Minus, assumenda. Odio, repudiandae repellendus. Facilis natus debitis aut atque fugiat alias quibusdam ex tempore aliquid temporibus, eum saepe. Dolores fugit quis officiis pariatur eius explicabo eveniet aut dolorum.</p>
+
+        <div class="main__content">
+          <div class="w-50">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control _search"  id="searchTd" placeholder="Search">
+              <div class="input-group-append">
+                <button class="btn theme-btn" type="submit">Go</button>
+              </div>
+            </div>
+          </div>
+          <div class="rightBtn">
+            <button class="btn login-btn" data-toggle="modal" data-target="#addDiscount" id="myButton">Add &nbsp;<i
+                class="fa fa-plus" aria-hidden="true"></i></button>
+          </div>
+
+<div class="pad_3">  
+          <div class="table-responsive">
+
+            <table class="table themeTable" >
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Price</th>
+                  <th>Discount Price</th>
+                  <th>Service</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="saloonTable"> 
+                <tr>
+                  <td>01</td>
+                  <td>1000</td>
+                  <td>299</td>
+                  <td>Hair Cut</td>
+                  <td>
+                    <span>
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>02</td>
+                  <td>1000</td>
+                  <td>299</td>
+                  <td>Hair Cut</td>
+                  <td>
+                    <span>
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>03</td>
+                  <td>1000</td>
+                  <td>299</td>
+                  <td>Hair Cut</td>
+                  <td>
+                    <span>
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>04</td>
+                  <td>1000</td>
+                  <td>399</td>
+                  <td>Hair Cut</td>
+                  <td>
+                    <span>
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>05</td>
+                  <td>1000</td>
+                  <td>499</td>
+                  <td>Hair Cut</td>
+                  <td>
+                    <span>
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>06</td>
+                  <td>1000</td>
+                  <td>399</td>
+                  <td>Hair Cut</td>
+                  <td>
+                    <span>
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>07</td>
+                  <td>1000</td>
+                  <td>299</td>
+                  <td>Hair Cut</td>
+                  <td>
+                    <span>
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>08</td>
+                  <td>1000</td>
+                  <td>299</td>
+                  <td>Hair Cut</td>
+                  <td>
+                    <span>
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>09</td>
+                  <td>1000</td>
+                  <td>299</td>
+                  <td>Hair Cut</td>
+                  <td>
+                    <span>
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>10</td>
+                  <td>1000</td>
+                  <td>299</td>
+                  <td>Hair Cut</td>
+                  <td>
+                    <span>
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>1000</td>
+                  <td>299</td>
+                  <td>Hair Cut</td>
+                  <td>
+                    <span>
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>12</td>
+                  <td>1000</td>
+                  <td>299</td>
+                  <td>Hair Cut</td>
+                  <td>
+                    <span>
+                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i> 
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </span>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+          </div>
+          <div class="clearfix"></div>
+            <div class='pagination-container tablePaging'>
+              
+                  <div class="pagination">
+                    <ol id="numbers"></ol>
+                  </div>
+                
+            </div>
+            
+
+
+
+
+        </div>
+        </div>
+      </main>
+      <!--  //END main -->
+
+      <!-- <div class="layout__container-after"></div> -->
+
+
+
     </div>
-  </div>
-  </main>
-  <!--  //END main -->
-    
-  <!-- <div class="layout__container-after"></div> -->
 
-  
-    
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js'></script>
-<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js'></script> -->
-<script  src="./assets/js/script.js"></script>
+    <!-- partial -->
+    <div class="modal fade pswdModal" id="addDiscount" tabindex="-1" role="dialog"
+      aria-labelledby="addDiscountTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="col-12 modal-title text-center" id="addDiscountTitle">Discount</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="login">
+              <form>
+                <div class="form-group  mt-4">
+                  <select name="service" class="form-control" autocomplete="off">
+                    <option hidden disabled selected value> -- Select Service -- </option>
+                    <option value="service1">Service-1</option>
+                    <option value="service2">Service-2</option>
+                    <option value="service3">Service-3</option>
+                  </select>
 
+                </div>
+                <div class="row mb-5">
+                  <div class="col-md-6">
+                    <div class="form-group ">
+                      <input type="text" id="price" class="form-control" autocomplete="off" required>
+                      <label class="form-control-placeholder p-0" for="price">Price</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+
+                    <div class="form-group">
+                      <input type="text" id="dPrice" class="form-control" autocomplete="off" required>
+                      <label class="form-control-placeholder p-0" for="dPrice">Discount Price</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <button type="button" class="btn theme-btn">Submit</button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- partial -->
+    <script src='./assets/js/jquery-3.3.1.min.js'></script>
+    <script src="./assets/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+
+    <script>
+      $(document).ready(function(){
+        $("#searchTd").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#saloonTable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      });    
+      </script>
 </body>
+
 </html>

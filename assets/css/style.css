@@ -9,7 +9,10 @@ body{
     font-family: 'Open Sans', sans-serif;
 }
 
-
+select, input{
+    outline: none!important;
+    box-shadow: none!important;
+}
 
 .login .form-group {
     position: relative;
@@ -53,6 +56,13 @@ input.form-control:after {
     border: 1px solid rgb(34, 34, 34);
     background: transparent
 }
+
+.login textarea.form-control{
+    max-height: 200px;
+    min-height: 130px;
+}
+
+
 .btn{
     outline: none!important;
     box-shadow: none!important;
@@ -188,4 +198,267 @@ img.admin_logo {
 
 .f-right{
     float: right;
+    width: 1%;
+}
+
+ul.salonee_locations, ul.salonee_category{
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+}
+ul.salonee_locations li,
+ul.salonee_category li {
+    flex: 0 0 30%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+    background: whitesmoke;
+    position: relative;
+}
+ul.salonee_locations li span,
+ul.salonee_category li span {
+    background:#dedede;
+    width: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul.salonee_locations li span i.fa{
+    font-size: 2em;
+    color: #6d6d6d;
+}
+ul.salonee_locations li p,
+ul.salonee_category li p {
+    font-size: 14px;
+    padding: 10px;
+    margin-bottom: 0;
+}
+ul.salonee_category li p {
+    width: 100%;
+    line-height: 1.5;
+}
+ul.salonee_locations li p b,
+ul.salonee_category li p b {
+    display: block;
+    font-size: 16px;
+}
+
+.w-50{
+    max-width: 400px;
+    width: 100%;
+    margin: 1.5em 1.5em;
+    margin-bottom: 0;
+    display: inline-block;
+}
+.rightBtn{
+    position: absolute;
+    right: 2em;
+    top: 6em;
+}
+
+.rightBtn .login-btn {
+    margin: 0;
+}
+
+
+/* custom pagination css */
+.customPagination, .paginacaoCursor{
+    margin: 10px 5px;
+    padding: 5px 8px;
+    color: #333;
+    background: #fefefe;
+    cursor: pointer;
+    border: 1px solid #ddd;
+  }
+  p.paginacaoValor.customPagination.activePagination {
+  color: white;
+}
+  .pagination-container{
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+  }
+
+ /* custom image upload css */
+.custom-file-upload {
+    border: 1px solid #d66292;
+    color: #d66292;
+  display: inline-block;
+  padding: 10px 12px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+input.form-control._search {
+    outline: none;
+    border-radius: 0;
+    height: 42px;
+    outline: none;
+    box-shadow: none;
+}
+
+.w-50 .theme-btn{
+    padding: 0;
+    text-transform: capitalize;
+}
+
+.salonee_category li.tableItem small {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+ul.salonee_category li small> i.fa {
+    font-size: 18px;
+    padding: 3px;
+}
+
+.fa-pencil-square-o{
+    color: #11ee11;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+.fa-trash{
+    color: #d66292;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+
+
+.pad_3 {
+    padding: 0 30px;
+}
+table.table.themeTable {
+    border-collapse: separate;
+    border-spacing: 0 .55em;
+}
+table.table.themeTable td,
+table.table.themeTable th {
+    border: none;
+    max-width: 90px;
+    font-size: 15px;
+}
+
+table.table.themeTable td{
+    background-color: #eee;
+    font-size: 14px;
+}
+table.table.themeTable tbody tr{
+    margin-bottom: 10px;
+}
+
+table.table.themeTable span i.fa{
+    margin: 0 6px;
+}
+
+
+.pagination-container.tablePaging {
+    width: 100%;
+    /* float:left; */
+    position: initial;
+  }
+  
+ .tablePaging .pagination {
+	/* background: #333; */
+	display: flex;
+    justify-content: flex-end;
+}
+
+#numbers {
+	padding: 0;
+	margin: 0 0rem;
+	list-style-type: none;
+	display: flex;
+}
+
+#numbers li a {
+	color: #333;
+    background: #fefefe;
+    cursor: pointer;
+    border: 1px solid #ddd;
+	padding: .5rem 1rem;
+	text-decoration: none;
+    opacity: .9;
+    display: block;
+}
+
+#numbers li a:hover {
+	opacity: 1;
+}
+
+#numbers li a.active {
+	opacity: 1;
+	background: rgb(214, 98, 146);
+    color: #fff;
+    border: 1px solid #d66292;
+}
+
+  ._hidden{
+    visibility: hidden;
+    display: none;
+  }
+
+  .promoCode li{
+    flex-flow: column;
+  }
+  .promoCode li h4 {
+    display: flex;
+    flex-flow: row;
+}
+
+ul.salonee_category.promoCode li span {
+    border-radius: 50%;
+    height: 60px;
+    width: 80px;
+    margin: 10px 8px;
+    background: white;
+}
+ul.promoCode li{
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+ul.promoCode li img{
+    width: 100%;
+    max-width: 32px;
+}
+
+ul.promoCode li h4.footr{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    background: #e1e1e1;
+    margin: 0;
+    padding: 8px 12px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+ul.promoCode li h4.footr b{
+    font-size: 15px;
+}
+ul.promoCode li h4.footr b i.fa {
+    margin: 0px 10px;
+}
+
+
+._slot label.form-control-placeholder{
+    font-size: 90%;
+    transform: translate3d(0, -100%, 0);
+    opacity: 1;
+    background-color: white;
+    color: #d66292;
+}
+.mySelect{
+    background: #f4f4f4;
+    padding: 0px 20px;
+    height: 40px;
+    border-radius: 0px;
+    border: 1px solid #f4f4f4;
 }
