@@ -333,6 +333,7 @@
     <script src='./assets/js/jquery-3.3.1.min.js'></script>
     <script src="./assets/bootstrap-4.3.1/js/bootstrap.min.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/sweetalert2.all.min.js"></script>
 
 
     <script>
@@ -343,7 +344,32 @@
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
           });
         });
-      });    
+      });  
+      
+      $(".fa-trash").click(function () {
+        swal({
+          title: "Are you sure?",
+          text: "You want to delete this Category",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Yes, delete it!",
+        }).then(result => {
+          if (result.dismiss === 'cancel') {
+            swal.closeModal();
+            return;
+          }
+          swal({
+            type: "success",
+            text: 'Category has been deleted!',
+            showConfirmButton: false,
+            timer: 1500
+          });
+
+        },
+        )
+      })
+      
       </script>
 </body>
 

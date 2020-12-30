@@ -261,14 +261,18 @@ body {
   transform-origin: bottom center;
   animation: fade-in-pulse 0.2s forwards cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
-.layout__container .main__header-user-menu-header {
+/* .layout__container .main__header-user-menu-header {
   background-color: #000000;
   height: 75px;
+} */
+.layout__container .main__header-user-menu-header {
+  background-color: #d66292;
+  min-height: 70px;
 }
 .layout__container .main__header-user-menu-header > span {
   display: inline-block;
   color: #fff;
-  line-height: 60px;
+  /* line-height: 60px; */
   padding: 0 15px;
 }
 .layout__container .main__header-user-menu-content {

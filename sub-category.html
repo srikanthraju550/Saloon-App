@@ -253,30 +253,30 @@
 
 
     <script>
-      $(".fa-trash").click(function() {
-       swal({
-         title: "Are you sure?",
-         text: "You want to delete this Category",
-         type: "warning",
-         showCancelButton: true,
-         confirmButtonColor: "#DD6B55",
-         confirmButtonText: "Yes, delete it!",        
-       }).then(result => {
-         swal({				
-             type: "success",
-             text: 'Category has been deleted!',
-             showConfirmButton: false,
-             timer: 1500
-           });
-           
-       },
-       function(dismiss){
-    if(dismiss === 'Cancel'){
-       swal.closeModal();
-    }
-   })
-     })
-     </script>
+      $(".fa-trash").click(function () {
+        swal({
+          title: "Are you sure?",
+          text: "You want to delete this Category",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Yes, delete it!",
+        }).then(result => {
+          if (result.dismiss === 'cancel') {
+            swal.closeModal();
+            return;
+          }
+          swal({
+            type: "success",
+            text: 'Category has been deleted!',
+            showConfirmButton: false,
+            timer: 1500
+          });
+
+        },
+        )
+      })
+    </script>
 
 </body>
 

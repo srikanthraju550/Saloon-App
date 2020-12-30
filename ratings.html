@@ -1,95 +1,361 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Salonee | Dashboard</title>
- <!-- fonts  -->
- <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
- <link rel="stylesheet" href="./assets/bootstrap-4.3.1/css/bootstrap.min.css">
- <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
- <link rel="stylesheet" href="./assets/css/theme.css">
- <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- fonts  -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/bootstrap-4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
 
+  <link rel="stylesheet" href="./assets/css/theme.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
-<div class="layout">
-  <div class="layout__container">
-    <!-- <div class="layout__container-before"></div> -->
+  <!-- partial:index.partial.html -->
+  <div class="layout">
+    <div class="layout__container">
+      <!-- <div class="layout__container-before"></div> -->
 
-    <!-- BEGIN sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar__header">
-        <a href="dashboard.html">
+      <!-- BEGIN sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__header">
+          <a href="dashboard.html">
             <img src="./assets/img/admin/logo.png" alt="logo" class="admin_logo">
-        </a>
-      </div>
-      <div class="sidebar__content">
-        <ul class="sidebar__content-menu">
-          
-          <li><a href="dashboard.html">Location</a></li>
-          <li ><a href="category.html">Category</a></li>
-          <li><a href="sub-category.html">Sub Category</a></li>
-          <li><a href="discounts.html">Discounts</a></li>
-          <li><a href="promocode.html">Promo Code</a></li>
-          <li><a href="slots.html">Slots</a></li>
-          <li><a href="service-for-today.html">Services for today</a></li>
-          <li><a href="service-bookings.html">Service Bookings</a></li>
-          <li class="sidebar--active"><a href="ratings.html">Ratings</a></li>
-
-        </ul>
-      </div>
-    </aside>
-    <!--  //END sidebar -->
-    
-    <!-- BEGIN main -->
-    <main class="main">
-
-      <div class="main__header">
-        <div class="main__header-heading">
-          <h1>Service Provider</h1>
+          </a>
         </div>
-        
-        <div class="main__header-user">
-          <button type="button" class="main__header-user-toggle" data-toggle="dropdown" data-toggle-for="user-menu" role="button">
-            <span class="main__header-user-toggle-picture">
-              <img src="./assets/img/admin/male-user-shadow.png" alt="">
-            </span>
-          </button>
-          <div class="main__header-user-menu" id="user-menu">
-            <div class="main__header-user-menu-header">
-              <span>Username</span>
-            </div>
-            <ul class="main__header-user-menu-content">
-              <li><a href="#"><i class="icon icon--dashboard"></i>Dashboard</a></li>
-              <li><a href="#"><i class="icon icon--profile"></i>My profile</a></li>
-              <li><a href="#"><i class="icon icon--settings"></i>Settings</a></li>
-              <li><a href="#"><i class="icon icon--help"></i>Help center</a></li>
-              <li><a href="#"><i class="icon icon--sign-out"></i>Sign out</a></li>
+        <div class="sidebar__content">
+          <ul class="sidebar__content-menu">
+
+            <li><a href="dashboard.html">Location</a></li>
+            <li><a href="category.html">Category</a></li>
+            <li><a href="sub-category.html">Sub Category</a></li>
+            <li><a href="discounts.html">Discounts</a></li>
+            <li><a href="promocode.html">Promo Code</a></li>
+            <li><a href="slots.html">Slots</a></li>
+            <li><a href="service-for-today.html">Services for today</a></li>
+            <li><a href="service-bookings.html">Service Bookings</a></li>
+            <li class="sidebar--active"><a href="ratings.html">Ratings</a></li>
+
+          </ul>
+        </div>
+      </aside>
+      <!--  //END sidebar -->
+
+      <!-- BEGIN main -->
+      <main class="main">
+
+        <div class="main__header">
+          <div class="main__header-heading">
+            <h1>Service Provider</h1>
+          </div>
+
+          <div class="main__header-user">
+
+            <button type="button" class="main__header-user-toggle" data-toggle="dropdown" data-toggle-for="user-menu"
+              role="button">
+              <span class="main__header-user-toggle-picture">
+                <img src="./assets/img/admin/male-user-shadow.png" alt="">
+              </span>
+            </button>
+            <!-- <div class="main__header-user-menu dropdown-menu" > -->
+            <ul class="main__header-user-menu-content dropdown-menu">
+              <li>
+                <div class="main__header-user-menu-header ">
+                  <span>Username</span>
+                </div>
+              </li>
+              <li data-toggle="modal" data-target="#myProfile"><a class="d-m" href="#"><i
+                    class="icon icon--profile"></i>My profile</a></li>
+              <li data-toggle="modal" data-target="#changePassword"><a class="d-m" href="#"><i
+                    class="icon icon--help"></i>Change Password</a></li>
+              <li><a class="d-m" href="index.html"><i class="icon icon--sign-out"></i>Sign out</a></li>
             </ul>
+            <!-- </div> -->
           </div>
         </div>
-      </div>
-    
-      <div class="main__content">
-        <br><br>
-        <div class="container">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam dignissimos suscipit minus? Minus totam est in ab labore consectetur ullam. Quam facere dolores aliquam dolorum recusandae doloremque sequi porro deserunt eligendi obcaecati incidunt dolor reiciendis maxime reprehenderit, officiis, distinctio, aperiam a? Minus, assumenda. Odio, repudiandae repellendus. Facilis natus debitis aut atque fugiat alias quibusdam ex tempore aliquid temporibus, eum saepe. Dolores fugit quis officiis pariatur eius explicabo eveniet aut dolorum.</p>
+        <div class="main__content">
+
+
+          <ul class="salonee_locations paginationTable _rating">
+            <li class="tableItem">             
+              <div class="fourFive">
+                <p><b>Service: Hair Cut</b></p>
+                <small class="number-rating"></small>
+                <div class="stars-outer">
+                  <div class="stars-inner"></div>
+                </div>                
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Saepe adipisci, voluptas praesentium eius corporis voluptatum?
+              </p>
+            </div>
+            </li>
+            <li class="tableItem">             
+              <div class="threeFIve">
+                <p><b>Service: Hair Cut</b></p>
+                <small class="number-rating"></small>
+                <div class="stars-outer">
+                  <div class="stars-inner"></div>
+                </div>                
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Saepe adipisci, voluptas praesentium eius corporis voluptatum?
+              </p>
+            </div>
+            </li>
+            <li class="tableItem">             
+              <div class="twoFive">
+                <p><b>Service: Hair Cut</b></p>
+                <small class="number-rating"></small>
+                <div class="stars-outer">
+                  <div class="stars-inner"></div>
+                </div>                
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Saepe adipisci, voluptas praesentium eius corporis voluptatum?
+              </p>
+            </div>
+            </li>
+            <li class="tableItem">             
+              <div class="three">
+                <p><b>Service: Hair Cut</b></p>
+                <small class="number-rating"></small>
+                <div class="stars-outer">
+                  <div class="stars-inner"></div>
+                </div>                
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Saepe adipisci, voluptas praesentium eius corporis voluptatum?
+              </p>
+            </div>
+            </li>
+            <li class="tableItem">             
+              <div class="four">
+                <p><b>Service: Hair Cut</b></p>
+                <small class="number-rating"></small>
+                <div class="stars-outer">
+                  <div class="stars-inner"></div>
+                </div>                
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Saepe adipisci, voluptas praesentium eius corporis voluptatum?
+              </p>
+            </div>
+            </li>
+
+            <li class="tableItem">             
+              <div class="fourFive">
+                <p><b>Service: Hair Cut</b></p>
+                <small class="number-rating"></small>
+                <div class="stars-outer">
+                  <div class="stars-inner"></div>
+                </div>                
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Saepe adipisci, voluptas praesentium eius corporis voluptatum?
+              </p>
+            </div>
+            </li>
+            <li class="tableItem">             
+              <div class="threeFIve">
+                <p><b>Service: Hair Cut</b></p>
+                <small class="number-rating"></small>
+                <div class="stars-outer">
+                  <div class="stars-inner"></div>
+                </div>                
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Saepe adipisci, voluptas praesentium eius corporis voluptatum?
+              </p>
+            </div>
+            </li>
+            <li class="tableItem">             
+              <div class="twoFive">
+                <p><b>Service: Hair Cut</b></p>
+                <small class="number-rating"></small>
+                <div class="stars-outer">
+                  <div class="stars-inner"></div>
+                </div>                
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Saepe adipisci, voluptas praesentium eius corporis voluptatum?
+              </p>
+            </div>
+            </li>
+            <li class="tableItem">             
+              <div class="three">
+                <p><b>Service: Hair Cut</b></p>
+                <small class="number-rating"></small>
+                <div class="stars-outer">
+                  <div class="stars-inner"></div>
+                </div>                
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Saepe adipisci, voluptas praesentium eius corporis voluptatum?
+              </p>
+            </div>
+            </li>
+            <li class="tableItem">             
+              <div class="four">
+                <p><b>Service: Hair Cut</b></p>
+                <small class="number-rating"></small>
+                <div class="stars-outer">
+                  <div class="stars-inner"></div>
+                </div>                
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                Saepe adipisci, voluptas praesentium eius corporis voluptatum?
+              </p>
+            </div>
+            </li>
+            
+          </ul>
+          <div class="pagination-container">
+            <p class='paginacaoCursor beforePagination' id=""><i class="fa fa-chevron-left" aria-hidden="true"></i></p>
+            <p class='paginacaoCursor afterPagination' id=""><i class="fa fa-chevron-right" aria-hidden="true"></i></p>
+          </div>
+        </div>
+
+
+      </main>
+      <!--  //END main -->
+
+      <!-- <div class="layout__container-after"></div> -->
+
+
+
     </div>
-  </div>
-  </main>
-  <!--  //END main -->
+
+   
     
-  <!-- <div class="layout__container-after"></div> -->
 
   
-    
-</div>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js'></script>
-<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js'></script> -->
-<script  src="./assets/js/script.js"></script>
+
+    <!-- partial -->
+    <script src="./assets/bootstrap-4.3.1/js/popper.min.js"></script>
+    <script src='./assets/js/jquery-3.3.1.min.js'></script>
+    <script src="./assets/js/sweetalert2.all.min.js"></script>
+    <script src="./assets/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/pagination.js"></script>
+
+<style>
+
+ul.salonee_locations.paginationTable._rating li {
+    padding: 12px 15px;
+}
+ul.salonee_locations.paginationTable._rating p {
+    padding: 0;
+}
+ul.salonee_locations.paginationTable._rating small {
+    font-size: 14px;
+    font-weight: 600;
+}
+ul.salonee_locations.paginationTable._rating p>b {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+
+  .stars-outer {
+  position: relative;
+  display: inline-block;
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-outer::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "FontAwesome";
+  font-weight: 900;
+  color: #ccc;
+}
+
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "FontAwesome";
+  font-weight: 900;
+  color: #f8ce0b;
+}
+</style>
+
+
+    <script>
+
+      // Initial Ratings
+    const ratings = {
+      fourFive: 4.5,
+      threeFIve: 3.5,
+      twoFive: 2.5,
+      three: 3.0,
+      four: 4.0
+    }
+
+    // Total Stars
+    const starsTotal = 5;
+
+    // Run getRatings when DOM loads
+    document.addEventListener('DOMContentLoaded', getRatings);
+
+    // Form Elements
+    const productSelect = document.getElementById('product-select');
+    const ratingControl = document.getElementById('rating-control');
+
+    // Init product
+    let product;
+
+    // Product select change
+    if(productSelect){
+    productSelect.addEventListener('change', (e) => {
+      product = e.target.value;
+      // Enable rating control
+      ratingControl.disabled = false;
+      ratingControl.value = ratings[product];
+    });
+  };
+  if(ratingControl){
+    // Rating control change
+    ratingControl.addEventListener('blur', (e) => {
+      const rating = e.target.value;
+
+      // Make sure 5 or under
+      if (rating > 5) {
+        alert('Please rate 1 - 5');
+        return;
+      }
+
+      // Change rating
+      ratings[product] = rating;
+
+      getRatings();
+    });
+  };
+    // Get ratings
+    function getRatings() {
+      for (let rating in ratings) {
+        // Get percentage
+        const starPercentage = (ratings[rating] / starsTotal) * 100;
+
+        // Round to nearest 10
+        const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
+
+        // Set width of stars-inner to percentage
+        document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
+
+        // Add number rating
+        document.querySelector(`.${rating} .number-rating`).innerHTML = ratings[rating];
+      }
+    }
+    </script>
+
 
 </body>
+
 </html>

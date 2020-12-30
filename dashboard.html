@@ -13,9 +13,9 @@
 
   <link rel="stylesheet" href="./assets/css/theme.css">
   <link rel="stylesheet" href="./assets/css/style.css">
- 
- <!-- SweetAlert2 -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
 </head>
 
 <body>
@@ -38,11 +38,11 @@
             <li><a href="category.html">Category</a></li>
             <li><a href="sub-category.html">Sub Category</a></li>
             <li><a href="discounts.html">Discounts</a></li>
-          <li><a href="promocode.html">Promo Code</a></li>
-          <li><a href="slots.html">Slots</a></li>
-          <li><a href="service-for-today.html">Services for today</a></li>
-          <li><a href="service-bookings.html">Service Bookings</a></li>
-          <li><a href="ratings.html">Ratings</a></li>
+            <li><a href="promocode.html">Promo Code</a></li>
+            <li><a href="slots.html">Slots</a></li>
+            <li><a href="service-for-today.html">Services for today</a></li>
+            <li><a href="service-bookings.html">Service Bookings</a></li>
+            <li><a href="ratings.html">Ratings</a></li>
 
           </ul>
         </div>
@@ -58,34 +58,39 @@
           </div>
 
           <div class="main__header-user">
+
             <button type="button" class="main__header-user-toggle" data-toggle="dropdown" data-toggle-for="user-menu"
               role="button">
               <span class="main__header-user-toggle-picture">
                 <img src="./assets/img/admin/male-user-shadow.png" alt="">
               </span>
             </button>
-            <div class="main__header-user-menu" id="user-menu">
-              <div class="main__header-user-menu-header">
-                <span>Username</span>
-              </div>
-              <ul class="main__header-user-menu-content">
-                <li><a href="#"><i class="icon icon--dashboard"></i>Dashboard</a></li>
-                <li><a href="#"><i class="icon icon--profile"></i>My profile</a></li>
-                <li><a href="#"><i class="icon icon--settings"></i>Settings</a></li>
-                <li><a href="#"><i class="icon icon--help"></i>Help center</a></li>
-                <li><a href="#"><i class="icon icon--sign-out"></i>Sign out</a></li>
-              </ul>
-            </div>
+            <!-- <div class="main__header-user-menu dropdown-menu" > -->
+            <ul class="main__header-user-menu-content dropdown-menu">
+              <li>
+                <div class="main__header-user-menu-header ">
+                  <h3>Peter Park</h3>
+                  <span>Service Provider</span>
+                </div>
+              </li>
+              <li data-toggle="modal" data-target="#myProfile"><a class="d-m" href="#"><i
+                    class="icon icon--profile"></i>My profile</a></li>
+              <li data-toggle="modal" data-target="#changePassword"><a class="d-m" href="#"><i
+                    class="icon icon--help"></i>Change Password</a></li>
+              <li><a class="d-m" href="index.html"><i class="icon icon--sign-out"></i>Sign out</a></li>
+            </ul>
+            <!-- </div> -->
           </div>
         </div>
         <div class="main__content">
-         
-            <div class=" f-right">
-              <button class="btn login-btn" data-toggle="modal" data-target="#addLocation" id="myButton">Add &nbsp;<i class="fa fa-plus" aria-hidden="true"></i></button>
-            
+
+          <div class=" f-right">
+            <button class="btn login-btn" data-toggle="modal" data-target="#addLocation" id="myButton">Add &nbsp;<i
+                class="fa fa-plus" aria-hidden="true"></i></button>
+
           </div>
 
-          <ul class="salonee_locations paginationTable " >
+          <ul class="salonee_locations paginationTable ">
             <li class="tableItem">
               <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
               <p>
@@ -267,7 +272,8 @@
                   </select>
                 </div>
                 <div class="form-group mb-5">
-                  <textarea type="text" id="address" rows="5" class="form-control" autocomplete="off" required></textarea>
+                  <textarea type="text" id="address" rows="5" class="form-control" autocomplete="off"
+                    required></textarea>
                   <label class="form-control-placeholder p-0" for="accountNumber">Address</label>
                 </div>
 
@@ -284,31 +290,245 @@
         </div>
       </div>
     </div>
+
+    <!-- change password modal  -->
+    <div class="modal fade pswdModal" id="changePassword" tabindex="-1" role="dialog"
+      aria-labelledby="changePasswordTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="col-12 modal-title text-center" id="changePasswordTitle">Change Password</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="login">
+              <form>
+                <div class="form-group mt-4 ">
+                  <input type="text" id="op" class="form-control" autocomplete="off" required>
+                  <label class="form-control-placeholder p-0" for="op">Old Password</label>
+                </div>
+
+                <div class="form-group ">
+                  <input type="text" id="np" class="form-control" autocomplete="off" required>
+                  <label class="form-control-placeholder p-0" for="np">New Password</label>
+                </div>
+
+                <div class="form-group mb-5">
+                  <input type="text" id="cp" class="form-control" autocomplete="off" required>
+                  <label class="form-control-placeholder p-0" for="cp">Confirm Password</label>
+                </div>
+
+
+                <div class="form-group">
+                  <button type="button" class="btn theme-btn">Submit</button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- my profile modal  -->
+    <div class="modal fade pswdModal" id="myProfile" tabindex="-1" role="dialog" aria-labelledby="myProfileTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <!-- profile information -->
+        <div class="modal-content"  id="profileInfo">
+          <div class="modal-header">
+            <h5 class="col-12 modal-title text-center" id="myProfileTitle">Profile</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+              <div class="profile_details">
+                <div class="pro_img">
+                  <img src="./assets/img/admin/avatar-male.png" alt="avatar-male">
+                </div>
+                <ul>
+                  <li>
+                    <span>User Name</span>
+                    <p>Peter Park</p>
+                  </li>
+                  <li>
+                    <span>Email Id</span>
+                    <p>PeterPark@domain.com</p>
+                  </li>
+                  <li>
+                    <span>Mobile Number</span>
+                    <p>9866123456</p>
+                  </li>
+                  <li>
+                    <span>Service</span>
+                    <p>Hair Straightener</p>
+                  </li>
+                  <li>
+                    <span>Location</span>
+                    <p>Madhapur</p>
+                  </li>
+                  <li>
+                    <span>Bank Account Number</span>
+                    <p>23456789234</p>
+                  </li>
+                  <li>
+                    <span>IFSC Code</span>
+                    <p>ABN123589</p>
+                  </li>
+                </ul>
+               
+              </div>
+
+            <div class="login">
+              <form>
+                <div class="form-group">
+                  <button type="button" class="btn theme-btn" onclick="showEditProfile()">Edit Profile</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- edit profile fields -->
+          <div class="modal-content" id="editPrfile">
+            <div class="modal-header">
+              <h5 class="col-12 modal-title text-center" id="editProfileTitle"> Edit Profile</h5>
+              <button  onclick="closeEdit()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="">
+                <!-- <img src="./assets/img/admin/avatar-male.png" alt="avatar-male"> -->
+              </div>
+              <div class="picture-container">
+                <div class="picture">
+                    <img src="./assets/img/admin/avatar-male.png" class="picture-src" id="wizardPicturePreview" title="">
+                    <input type="file" id="wizard-picture" class="">
+                    <i class="fa fa-camera" aria-hidden="true"></i>
+                </div>
+                 <!-- <h6 class="">Choose Picture</h6> -->
+                </div>
+           
+              
+              <div class="login">
+                <form>
+                  <div class="form-group mt-4 ">
+                    <input type="text" id="name" class="form-control" autocomplete="off" required>
+                    <label class="form-control-placeholder p-0" for="name">Name</label>
+                  </div>
+  
+                  <div class="form-group">
+                    <input type="text" id="email" class="form-control" autocomplete="off" required>
+                    <label class="form-control-placeholder p-0" for="email">Email Id</label>
+                  </div>
+  
+                  <div class="form-group">
+                    <input type="text" id="mn" class="form-control" autocomplete="off" required>
+                    <label class="form-control-placeholder p-0" for="mn">Mobile Number</label>
+                  </div>
+
+                  <div class="form-group">
+                    <input type="text" id="servie" class="form-control" autocomplete="off" required>
+                    <label class="form-control-placeholder p-0" for="servie">Service</label>
+                  </div>
+  
+                  <div class="form-group">
+                    <input type="text" id="location" class="form-control" autocomplete="off" required>
+                    <label class="form-control-placeholder p-0" for="location">Location</label>
+                  </div>
+  
+                  <div class="form-group">
+                    <input type="text" id="ban" class="form-control" autocomplete="off" required>
+                    <label class="form-control-placeholder p-0" for="ban">Bank Account Number</label>
+                  </div>
+
+
+                  <div class="form-group mb-5">
+                    <input type="text" id="ifsc" class="form-control" autocomplete="off" required>
+                    <label class="form-control-placeholder p-0" for="ifsc">IFSC Code</label>
+                  </div>
+
+                  <div class="form-group">
+                    <button type="button" class="btn theme-btn">Save</button>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+
+
+      </div>
+    </div>
+
+
     <!-- partial -->
-    
+    <script src="./assets/bootstrap-4.3.1/js/popper.min.js"></script>
     <script src='./assets/js/jquery-3.3.1.min.js'></script>
     <script src="./assets/js/sweetalert2.all.min.js"></script>
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js'></script> -->
     <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
     <script src="./assets/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+
     <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js'></script> -->
     <!-- <script src="./assets/js/script.js"></script> -->
-    <script src="./assets/js/main.js"></script> 
+    <script src="./assets/js/main.js"></script>
     <script src="./assets/js/pagination.js"></script>
 
-
-    <script>
-      	$(document).on('click', '#success', function(e) {
-			swal({				
-        type: "success",
-        text: 'Location Added Successfully',
-        showConfirmButton: false,
-        timer: 1500
-      })
-      
+<script>
+  $(document).ready(function(){
+// Prepare the preview for profile picture
+    $("#wizard-picture").change(function(){
+        readURL(this);
     });
-    
-    
+});
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+      $(document).on('click', '#success', function (e) {
+        swal({
+          type: "success",
+          text: 'Location Added Successfully',
+          showConfirmButton: false,
+          timer: 1500
+        })
+
+      });
+      var y = document.getElementById("editPrfile");
+      var x = document.getElementById("profileInfo");
+
+      y.style.display = "none";
+
+      function showEditProfile() {
+        if (x.style.display === "none") {
+          x.style.display = "block";
+          y.style.display = "none";
+        } else {
+          x.style.display = "none";
+          y.style.display = "block";
+        }
+      }
+
+      function closeEdit(){
+        y.style.display = "none";
+        x.style.display = "block";
+      }
+
+
     </script>
 
 
