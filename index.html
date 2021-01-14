@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="./assets/bootstrap-4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
+
     <!-- fonts  -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<!-- SweetAlert2 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+
 </head>
 
 <body>
@@ -18,14 +22,14 @@
             <div class="bg"></div>
             <div class="login-form">
                 <img src="./assets/img/admin/logo.png" alt="Salonee" class="logo">
-                <form>
+                <form id="login_form" method="post" action="dashboard.html">
                     <div class="form-group">
-                        <input type="text" id="name" class="form-control" autocomplete="off" required>
+                        <input type="text" id="name" name="NAME" class="form-control" autocomplete="off" required>
                         <label class="form-control-placeholder p-0" for="name">User Name</label>
                     </div>
 
                     <div class="form-group mb_1">
-                        <input type="password" id="password-field" class="form-control" name="password" autocomplete="off" required>
+                        <input type="password" id="password-field" name="PASSWORD" class="form-control" autocomplete="off" required>
                         <label class="form-control-placeholder p-0" for="password-field">Password</label>
                         <span toggle="#password-field" class="fa fa-eye field-icon toggle-password"></span>
                     </div>
@@ -58,14 +62,14 @@
                 </div>
                 <div class="modal-body">
                     <div class="login">
-                        <form>
+                        <form id="forgotPaswdForm">
                             <div class="form-group mb-5 mt-4">
-                                <input type="email" id="email" class="form-control" autocomplete="off" required>
+                                <input type="email" id="email" name="REGMAIL" class="form-control" autocomplete="off" >
                                 <label class="form-control-placeholder p-0" for="email">Enter your Mail id</label>
                             </div>
 
                             <div class="form-group">
-                                <button type="button" class="btn theme-btn">Submit</button>
+                                <button class="btn theme-btn">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -89,25 +93,25 @@
                 </div>
                 <div class="modal-body">
                     <div class="login signUp">
-                        <form>
+                        <form id="signupForm" method="post" action="dashboard.html">
                             <div class="d-flex flex-row myFlx">
                                 <div class="form-group">
-                                    <input type="text" id="fullname" class="form-control" autocomplete="off" required>
+                                    <input type="text" id="fullname" name="FULLNAME" class="form-control" autocomplete="off" required>
                                     <label class="form-control-placeholder p-0" for="fullname">Full Name</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" id="signup-email" class="form-control" autocomplete="off" required>
+                                    <input type="email" id="signup-email" name="SIGNUPEMAIL" class="form-control" autocomplete="off" required>
                                     <label class="form-control-placeholder p-0" for="signup-email">Enter your Mail id</label>
                                 </div>
                             </div>
 
                             <div class="d-flex flex-row myFlx">
                                 <div class="form-group">
-                                    <input type="text" id="mobile" class="form-control" autocomplete="off" required>
+                                    <input type="text" id="mobile" name="MOBILE" class="form-control" autocomplete="off" required>
                                     <label class="form-control-placeholder p-0" for="mobile">Mobile Number</label>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" id="signup-password" class="form-control" name="password" autocomplete="off" required>
+                                    <input type="password" id="signup-password" class="form-control" name="SIGNPASSWORD" autocomplete="off" required>
                                     <label class="form-control-placeholder p-0" for="signup-password">Password</label>
                                     <span toggle="#signup-password" class="fa fa-eye field-icon toggle-password"></span>
                                 </div>
@@ -115,31 +119,32 @@
 
                             <div class="d-flex flex-row myFlx">
                                 <div class="form-group">
-                                <select name="service" class="form-control">
+                                <select name="SERVICE" class="form-control">
+                                <option hidden disabled selected value> -- select an option -- </option>
                                 <option value="service1">Service1</option>
                                 <option value="service2">Service2</option>
                                 </select>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" id="location" class="form-control" autocomplete="off" required>
+                                    <input type="text" id="location" name="LOCATION" class="form-control" autocomplete="off" required>
                                     <label class="form-control-placeholder p-0" for="location">Location</label>
                                 </div>
                             </div>
                             <div class="d-flex flex-row myFlx">
                                 <div class="form-group">
-                                    <input type="text" id="accountNumber" class="form-control" autocomplete="off" required>
+                                    <input type="text" id="accountNumber" name="ACCNTNUM" class="form-control" autocomplete="off" required>
                                     <label class="form-control-placeholder p-0" for="accountNumber">Bank Account Number</label>
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" id="ifsc" class="form-control" autocomplete="off" required>
+                                    <input type="text" id="ifsc" name="IFSC" class="form-control" autocomplete="off" required>
                                     <label class="form-control-placeholder p-0" for="ifsc">IFSC code</label>
                                 </div>
                             </div>
 
 
                     <div class="form-group mt-4">
-                        <button type="button" class="btn theme-btn">Submit</button>
+                        <button class="btn theme-btn" id="signUpButton">Submit</button>
                     </div>
                 
                     </form>
@@ -155,24 +160,206 @@
 
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="./assets/js/sweetalert2.all.min.js"></script>
     <script src="./assets/bootstrap-4.3.1/js/bootstrap.min.js"></script>
     <!-- <script src="./assets/js/main.js"></script> -->
+<!-- Form Validation -->
+<script src="./assets/js/jquery.validate.js"></script>
 
-    <script>
-        $(".toggle-password").click(function() {
 
-            $(this).toggleClass("fa-eye fa-eye-slash");
-            var input = $($(this).attr("toggle"));
-            if (input.attr("type") == "password") {
-                input.attr("type", "text");
-            } else {
-                input.attr("type", "password");
-            }
+
+<script>
+
+// FLOATING LABLE OF INPUT 
+$(document).ready(function() {
+    $("input").focus(function(){        
+        // $(this).siblings("input").find(".active").removeClass("active");
+        $(this).parent().addClass("active");   
+  });
+    if($(this).value =='null'){
+        $("input").focusout(function(){    
+                $(this).parent().removeClass("active");    
+            
         });
+    }
+})
 
-        document.getElementById("myButton").onclick = function () {
-        location.href = "dashboard.html";
-    };
+
+// TOGGLE PASSWORD 
+    $(".toggle-password").click(function() {
+
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
+
+    
+// SIGNUP FORM SUBMIT 
+$("#signUpButton").click(function(){
+            if($("#signupForm").valid()){
+                swal({
+                    type: "success",
+                    text: 'Signed Up Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                // window.location.href = "dashboard.html";
+                var delay = 3000; 
+                setTimeout(function(){ window.location = 'dashboard.html'; }, delay);
+                // console.log('successfully SignedUp')
+            }        
+    });
+
+
+ // LOGIN FORM SUBMIT 
+    $("#myButton").click(function(){
+            if($("#login_form").valid()){
+                swal({
+                    type: "success",
+                    text: 'Login Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                window.location.href = "dashboard.html";
+                console.log('successfully logged in')
+            }        
+    });
+
+
+// SIGNUP FORM VALIDATIONS 
+$("#signupForm").validate({        
+        // Specify the validation rules
+        rules: {
+            FULLNAME:{
+                required: true,
+                minlength: 3,
+                maxlength: 50,
+            },
+            SIGNUPEMAIL: {
+                required: true,
+                email: true,
+            },
+            MOBILE: {
+                required: true,
+                number: true,
+                minlength: 10,
+                maxlength: 15,
+            },
+            SIGNPASSWORD: {
+                required: true,
+                minlength: 8,
+                maxlength: 15,
+            },   
+            SERVICE: {
+                required: true,
+            },
+            LOCATION: {
+                required: true,
+            },
+            ACCNTNUM: {
+                required: true,
+            },
+            IFSC:{
+                required: true,
+            } 
+        },        
+        // Specify the validation error messages
+        messages: {
+            FULLNAME: {
+                required :"Please Enter Full Name",
+                minlength: "Full Name must be minimum 3 characters",
+                maxlength: "Maximum 50 characters only"
+            },      
+            SIGNUPEMAIL: {
+                required :"Please Enter Email Address",
+                email :"Please Enter a Valid Email Address",
+            },
+
+            MOBILE: {
+                required :"Please Enter Mobile Number",
+                number: "Please Enter Digits Only",
+                minlength: "Minimum 10 Digits required",
+                maxlength: "Maximum 15 Digits only"
+            },
+            SIGNPASSWORD: {
+                required :"Please Enter Password",
+                minlength: "Password must be minimum 8 characters",
+                maxlength: "Maximum 15 characters only"
+            },    
+            SERVICE: {
+                required: "Please Select Service",
+            },
+            LOCATION: {
+                required: "Please Enter Location",
+            },
+            ACCNTNUM: {
+                required: "Please Enter Account Number",
+            },
+            IFSC:{
+                required: "Please Enter IFSC",
+            }  
+        
+        }      
+        
+    });
+
+
+
+// LOGIN FORM VALIDATIONS 
+    $("#login_form").validate({        
+        // Specify the validation rules
+        rules: {
+            NAME:{
+        required: true,
+        minlength: 3,
+        maxlength: 50,
+      },
+      PASSWORD: {
+        required: true,
+        minlength: 8,
+        maxlength: 15,
+      },    
+        },        
+        // Specify the validation error messages
+        messages: {
+            NAME: {
+        required :"Please Enter User Name",
+        minlength: "User Name must be minimum 3 characters",
+        maxlength: "Maximum 50 characters only"
+      },      
+      
+      PASSWORD: {
+        required :"Please Enter Password",
+        minlength: "Password must be minimum 8 characters",
+        maxlength: "Maximum 15 characters only"
+      },      
+        }      
+        
+    });
+
+
+// FORGOTPASSWORD FORM VALIDATIONS 
+$("#forgotPaswdForm").validate({
+        rules: {
+            REGMAIL: 
+            {
+                required: true,
+                email: true,
+            },
+        },
+        messages: {
+            REGMAIL: 
+            {
+                required :"Please Enter Email Address",
+                email :"Please Enter a Valid Email Address",
+            },
+        }
+    });
+
     </script>
 
 </body>

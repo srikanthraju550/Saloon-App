@@ -472,15 +472,13 @@
     <script src="./assets/bootstrap-4.3.1/js/popper.min.js"></script>
     <script src='./assets/js/jquery-3.3.1.min.js'></script>
     <script src="./assets/js/sweetalert2.all.min.js"></script>
-    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js'></script> -->
-    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script> -->
     <script src="./assets/bootstrap-4.3.1/js/bootstrap.min.js"></script>
 
-    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js'></script> -->
-    <!-- <script src="./assets/js/script.js"></script> -->
+   
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/pagination.js"></script>
-
+<!-- Form Validation -->
+<script src="./assets/js/jquery.validate.js"></script>
 <script>
   $(document).ready(function(){
 // Prepare the preview for profile picture
@@ -529,6 +527,71 @@ function readURL(input) {
       }
 
 
+
+      $("#lead_form").validate({
+        
+        // Specify the validation rules
+        rules: {
+            NAME:{
+        required: true,
+        minlength: 3,
+        maxlength: 50,
+      },
+      EMAIL: {
+        required: true,
+        email: true,
+      },
+    
+      CONTACT: {
+        required: true,
+        number: true,
+        minlength: 10,
+        maxlength: 15,
+        //custom_phone: "required SUBMIT",
+      },
+      LOCATION: {
+        required: true,
+      },
+      SUBJECT: {
+        required: true,
+      },
+      MESSAGE: {
+        required: true,
+        minlength: 10,
+        maxlength: 500,
+      },
+        },
+        
+        // Specify the validation error messages
+        messages: {
+            NAME: {
+        required :"Please Enter Name",
+        maxlength: "Please Enter Below 50 Characters"
+      },
+            EMAIL: {
+        required :"Please Enter Email Address",
+        email :"Please Enter a Valid Email Address",
+      },
+      
+            CONTACT: {
+        required :"Please Enter Contact Number",
+        number: "Please Enter Digits Only",
+        maxlength: "Please Enter Below 10 Digits"
+      },
+            LOCATION: {
+        required :"Please Enter Your Location",
+      },	
+      SUBJECT: {
+        required :"Please Enter Subject",
+      },	
+      MESSAGE: {
+        required :"Please Enter Message",
+        maxlength: "Please Enter No More Than 500 Characters"
+      },	
+        }
+        
+        
+    });
     </script>
 
 

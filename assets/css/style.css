@@ -16,7 +16,7 @@ select, input{
 
 .login .form-group {
     position: relative;
-    margin-bottom: 1.5rem
+    margin-bottom: 2.5rem
 }
 
 .login .form-control-placeholder {
@@ -28,16 +28,26 @@ select, input{
     opacity: 0.5;
     color: grey
 }
-
-.login .form-control:focus+.form-control-placeholder,
-.login .form-control:valid+.form-control-placeholder {
-    font-size: 90%;
-    transform: translate3d(0, -100%, 0);
-    opacity: 1;
+.form-group label.text-red {
+    position: absolute;
+    font-size: 12px;
+    color: #e64000;
+  }
+.login .form-control:focus + .form-control-placeholder,
+.login .form-control:valid + .form-control-placeholder {
+    font-size: 90%!important;
+    transform: translate3d(0, -100%, 0)!important;
+    opacity: 1!important;
     background-color: white;
     color: #d66292;
 }
-
+.form-group.active>.form-control-placeholder{
+    font-size: 90%!important;
+    transform: translate3d(0, -100%, 0)!important;
+    opacity: 1!important;
+    background-color: white;
+    color: #d66292;
+}
 .login .form-control {
     background: transparent;
     border: none;
@@ -61,7 +71,9 @@ input.form-control:after {
     max-height: 200px;
     min-height: 130px;
 }
-
+.signUp div.form-group {
+    margin-bottom: 2.5em;
+}
 
 .btn{
     outline: none!important;
