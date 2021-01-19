@@ -6,7 +6,19 @@ $('#file-upload').change(function() {
 });
 
 
-
+// FLOATING LABLE OF INPUT 
+$(document).ready(function() {
+  $("input").focus(function(){        
+      // $(this).siblings("input").find(".active").removeClass("active");
+      $(this).parent().addClass("active");   
+});
+  if($(this).value =='null'){
+      $("input").focusout(function(){    
+              $(this).parent().removeClass("active");    
+          
+      });
+  }
+})
 // table pagination and search 
 
 $(document).ready(function(){

@@ -222,7 +222,10 @@ img.admin_logo {
 
 .f-right{
     float: right;
-    width: 1%;
+    /* width: 1%; */
+    width: auto;
+    right: 30px;
+    position: relative;
 }
 
 ul.salonee_locations, ul.salonee_category{
@@ -492,7 +495,7 @@ ul.promoCode li h4.footr b i.fa {
 }
 
 ul.main__header-user-menu-content.dropdown-menu.show {
-    left: -212px!important;
+    left: 0px!important;
     min-width: 300px;
     padding: 0;
     top: 50px!important;
@@ -636,21 +639,26 @@ ul.main__header-user-menu-content.dropdown-menu.show {
 
 /*Profile Pic End*/
 
-.btn-light:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled).active,
-.show > .btn-light.dropdown-toggle {
-  color: #212529;
-  background-color: none !important;
-  border-color: none !important;
+h4.usrName{
+    display: inline-block;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+.proCircle{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+.proCircle img {
+    width: 40px;
+    height: auto;
 }
 
-.btn-light {
-    color: #212529;
-    background-color: none !important;
-    border-color: none !important;
-  }
-  
-  .btn-light:hover {
-    color: #212529;
-    background-color: none !important;
-    border-color: none !important;
-  }
+
+.inBlk {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0em 0.5em;
+    min-width: 55px;
+}
