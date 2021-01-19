@@ -59,6 +59,18 @@ select, input{
     color: black;
     font-size: 1rem;
 }
+button.swal2-confirm.swal2-styled {
+    background: #D66292!important;
+    border-left-color: #D66292!important;
+    border-right-color: #D66292!important;
+    outline: none!important;
+    box-shadow: none!important;
+}
+button.swal2-cancel.swal2-styled {
+    background-color: rgb(90 90 90)!important;
+    outline: none!important;
+    box-shadow: none!important;
+}
 
 input.form-control:focus,
 input.form-control:after {
@@ -483,7 +495,7 @@ ul.main__header-user-menu-content.dropdown-menu.show {
     left: -212px!important;
     min-width: 300px;
     padding: 0;
-    top: -8px!important;
+    top: 50px!important;
     z-index: 1;
     transform: initial!important;
 }
@@ -623,3 +635,22 @@ ul.main__header-user-menu-content.dropdown-menu.show {
 
 
 /*Profile Pic End*/
+
+.btn-light:not(:disabled):not(.disabled):active, .btn-light:not(:disabled):not(.disabled).active,
+.show > .btn-light.dropdown-toggle {
+  color: #212529;
+  background-color: none !important;
+  border-color: none !important;
+}
+
+.btn-light {
+    color: #212529;
+    background-color: none !important;
+    border-color: none !important;
+  }
+  
+  .btn-light:hover {
+    color: #212529;
+    background-color: none !important;
+    border-color: none !important;
+  }

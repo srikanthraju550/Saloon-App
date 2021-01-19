@@ -66,7 +66,7 @@
               </span>
             </button>
             <!-- <div class="main__header-user-menu dropdown-menu" > -->
-            <ul class="main__header-user-menu-content dropdown-menu">
+            <ul class="main__header-user-menu-content dropdown-menu" >
               <li>
                 <div class="main__header-user-menu-header ">
                   <h3>Peter Park</h3>
@@ -304,25 +304,25 @@
           </div>
           <div class="modal-body">
             <div class="login">
-              <form>
+              <form id="changePswdForm">
                 <div class="form-group mt-4 ">
-                  <input type="text" id="op" class="form-control" autocomplete="off" required>
+                  <input type="text" id="op" class="form-control" name="oldPswd" autocomplete="off" required>
                   <label class="form-control-placeholder p-0" for="op">Old Password</label>
                 </div>
 
                 <div class="form-group ">
-                  <input type="text" id="np" class="form-control" autocomplete="off" required>
+                  <input type="text" id="np" class="form-control" name="newPswd" autocomplete="off" required>
                   <label class="form-control-placeholder p-0" for="np">New Password</label>
                 </div>
 
                 <div class="form-group mb-5">
-                  <input type="text" id="cp" class="form-control" autocomplete="off" required>
+                  <input type="text" id="cp" class="form-control" name="cnfrmPswd" autocomplete="off" required>
                   <label class="form-control-placeholder p-0" for="cp">Confirm Password</label>
                 </div>
 
 
                 <div class="form-group">
-                  <button type="button" class="btn theme-btn">Submit</button>
+                  <button class="btn theme-btn">Submit</button>
                 </div>
               </form>
             </div>
@@ -417,45 +417,45 @@
            
               
               <div class="login">
-                <form>
+                <form id="editProfileForm">
                   <div class="form-group mt-4 ">
-                    <input type="text" id="name" class="form-control" autocomplete="off" required>
+                    <input type="text" id="name" class="form-control" name="FULLNAME" autocomplete="off" required>
                     <label class="form-control-placeholder p-0" for="name">Name</label>
                   </div>
   
                   <div class="form-group">
-                    <input type="text" id="email" class="form-control" autocomplete="off" required>
+                    <input type="text" id="email" class="form-control" name="SIGNUPEMAIL" autocomplete="off" required>
                     <label class="form-control-placeholder p-0" for="email">Email Id</label>
                   </div>
   
                   <div class="form-group">
-                    <input type="text" id="mn" class="form-control" autocomplete="off" required>
+                    <input type="text" id="mn" class="form-control" name="MOBILE" autocomplete="off" required>
                     <label class="form-control-placeholder p-0" for="mn">Mobile Number</label>
                   </div>
 
                   <div class="form-group">
-                    <input type="text" id="servie" class="form-control" autocomplete="off" required>
+                    <input type="text" id="servie" class="form-control" name="SERVICE" autocomplete="off" required>
                     <label class="form-control-placeholder p-0" for="servie">Service</label>
                   </div>
   
                   <div class="form-group">
-                    <input type="text" id="location" class="form-control" autocomplete="off" required>
+                    <input type="text" id="location" class="form-control" name="LOCATION" autocomplete="off" required>
                     <label class="form-control-placeholder p-0" for="location">Location</label>
                   </div>
   
                   <div class="form-group">
-                    <input type="text" id="ban" class="form-control" autocomplete="off" required>
+                    <input type="text" id="ban" class="form-control" name="ACCNTNUM" autocomplete="off" required>
                     <label class="form-control-placeholder p-0" for="ban">Bank Account Number</label>
                   </div>
 
 
                   <div class="form-group mb-5">
-                    <input type="text" id="ifsc" class="form-control" autocomplete="off" required>
+                    <input type="text" id="ifsc" class="form-control" name="IFSC" autocomplete="off" required>
                     <label class="form-control-placeholder p-0" for="ifsc">IFSC Code</label>
                   </div>
 
                   <div class="form-group">
-                    <button type="button" class="btn theme-btn">Save</button>
+                    <button  class="btn theme-btn">Save</button>
                   </div>
                 </form>
               </div>
@@ -480,6 +480,23 @@
 <!-- Form Validation -->
 <script src="./assets/js/jquery.validate.js"></script>
 <script>
+// FLOATING LABLE OF INPUT 
+$(document).ready(function() {
+    $("input").focus(function(){        
+        // $(this).siblings("input").find(".active").removeClass("active");
+        $(this).parent().addClass("active");   
+  });
+    if($(this).value =='null'){
+        $("input").focusout(function(){    
+                $(this).parent().removeClass("active");    
+            
+        });
+    }
+})
+
+
+
+
   $(document).ready(function(){
 // Prepare the preview for profile picture
     $("#wizard-picture").change(function(){
@@ -526,70 +543,123 @@ function readURL(input) {
         x.style.display = "block";
       }
 
-
-
-      $("#lead_form").validate({
-        
+// EDIT PROFILE FORM VALIDATIONS 
+$("#editProfileForm").validate({        
         // Specify the validation rules
         rules: {
-            NAME:{
-        required: true,
-        minlength: 3,
-        maxlength: 50,
-      },
-      EMAIL: {
-        required: true,
-        email: true,
-      },
-    
-      CONTACT: {
-        required: true,
-        number: true,
-        minlength: 10,
-        maxlength: 15,
-        //custom_phone: "required SUBMIT",
-      },
-      LOCATION: {
-        required: true,
-      },
-      SUBJECT: {
-        required: true,
-      },
-      MESSAGE: {
-        required: true,
-        minlength: 10,
-        maxlength: 500,
-      },
-        },
-        
+            FULLNAME:{
+                required: true,
+                minlength: 3,
+                maxlength: 50,
+            },
+            SIGNUPEMAIL: {
+                required: true,
+                email: true,
+            },
+            MOBILE: {
+                required: true,
+                number: true,
+                minlength: 10,
+                maxlength: 15,
+            },
+            SIGNPASSWORD: {
+                required: true,
+                minlength: 8,
+                maxlength: 15,
+            },   
+            SERVICE: {
+                required: true,
+            },
+            LOCATION: {
+                required: true,
+            },
+            ACCNTNUM: {
+                required: true,
+            },
+            IFSC:{
+                required: true,
+            } 
+        },        
         // Specify the validation error messages
         messages: {
-            NAME: {
-        required :"Please Enter Name",
-        maxlength: "Please Enter Below 50 Characters"
-      },
-            EMAIL: {
-        required :"Please Enter Email Address",
-        email :"Please Enter a Valid Email Address",
-      },
-      
-            CONTACT: {
-        required :"Please Enter Contact Number",
-        number: "Please Enter Digits Only",
-        maxlength: "Please Enter Below 10 Digits"
-      },
+            FULLNAME: {
+                required :"Please Enter Full Name",
+                minlength: "Full Name must be minimum 3 characters",
+                maxlength: "Maximum 50 characters only"
+            },      
+            SIGNUPEMAIL: {
+                required :"Please Enter Email Address",
+                email :"Please Enter a Valid Email Address",
+            },
+
+            MOBILE: {
+                required :"Please Enter Mobile Number",
+                number: "Please Enter Digits Only",
+                minlength: "Minimum 10 Digits required",
+                maxlength: "Maximum 15 Digits only"
+            },
+            SIGNPASSWORD: {
+                required :"Please Enter Password",
+                minlength: "Password must be minimum 8 characters",
+                maxlength: "Maximum 15 characters only"
+            },    
+            SERVICE: {
+                required: "Please Select Service",
+            },
             LOCATION: {
-        required :"Please Enter Your Location",
-      },	
-      SUBJECT: {
-        required :"Please Enter Subject",
-      },	
-      MESSAGE: {
-        required :"Please Enter Message",
-        maxlength: "Please Enter No More Than 500 Characters"
-      },	
-        }
+                required: "Please Enter Location",
+            },
+            ACCNTNUM: {
+                required: "Please Enter Account Number",
+            },
+            IFSC:{
+                required: "Please Enter IFSC",
+            }  
         
+        }      
+        
+    });
+
+
+
+    // CHANGE PASSWORD FORM VALIDATIONS 
+    $("#changePswdForm").validate({        
+        // Specify the validation rules
+        rules: {
+            oldPswd: {
+              required: true,
+              minlength: 8,
+              maxlength: 15,
+            },
+            newPswd: {
+              required: true,
+              minlength: 8,
+              maxlength: 15,
+            }, 
+            cnfrmPswd: {
+              required: true,
+              minlength: 8,
+              maxlength: 15,
+            },    
+        },        
+        // Specify the validation error messages
+        messages: {
+            oldPswd: {
+              required :"Please Enter Password",
+              minlength: "Password must be minimum 8 characters",
+              maxlength: "Maximum 15 characters only"
+            },
+            newPswd: {
+              required :"Please Enter Password",
+              minlength: "Password must be minimum 8 characters",
+              maxlength: "Maximum 15 characters only"
+            },
+            cnfrmPswd: {
+              required :"Please Enter Password",
+              minlength: "Password must be minimum 8 characters",
+              maxlength: "Maximum 15 characters only"
+            },      
+        }      
         
     });
     </script>
